@@ -1,0 +1,106 @@
+
+<div class="row">
+    <main class="col-md-12">
+        <br>
+        <h2>{{data.firstName}} {{data.lastName}} - Student: {{data.studentNum}}</h2>
+        <hr />
+
+        <form action="/student/update" method="post"  >
+        
+            <input type="hidden" name="studentNum" id="studentNum" value="{{data.studentNum}}" />
+        
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name:</label>
+                            <input class="form-control" name="firstName" type="text" value="{{data.firstName}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Last Name:</label>
+                            <input class="form-control" name="lastName" type="text" value="{{data.lastName}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input class="form-control" name="email" type="email" value="{{data.email}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Address (Street): </label>
+                            <input class="form-control" name="addressStreet" type="text" value="{{data.addressStreet}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Address (City): </label>
+                            <input class="form-control" name="addressCity" type="text" value="{{data.addressCity}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Address (Province):  </label>
+                            <input class="form-control" name="addressProvince" type="text" value="{{data.addressProvince}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>TA: </label>
+                            {{#if data.TA}}
+                            <input class="form-check-input" name="TA" type="checkbox" id="TA" /> (checked)
+                            {{else}}
+                            <input class="form-check-input" name="TA" type="checkbox" id="TA" /> (not checked)
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">                                                       
+                             <label  class="checkbox-inline">
+                                
+											<input type="radio" value="Full Time" name="status"/> Full Time
+                            {{#equal data.status "Full Time"}} 
+                            (full time student)
+                            {{/equal}}
+							</label>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+										<label class="checkbox-inline">
+											<input type="radio" value="Part Time" name="status" /> Part Time
+                            {{#equal data.status "Part Time"}} 
+                            (Part time student)
+                            {{/equal}}
+                                
+							</label>
+                        </div>
+                    </div>
+                    
+                   <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Course: </label>
+                            {{#if viewData.courses}}
+                                <select class="form-control" name="course" id="course">
+                                <option value="">Select Course</option>
+                            {{#each viewData.courses}}
+                                <option value="{{courseId}}" {{#if selected}} selected {{/if}} >{{courseCode}} </option>
+                            {{/each}}
+                                </select>
+                            {{else}}
+                                <div>No Courses</div>
+                            {{/if}} 
+
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="submit" class="btn btn-primary float-right" value="Update Student" /><br /><br /><br />
+        </form>
+    </main>
+</div>

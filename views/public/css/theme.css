@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+body {
+    margin: 5%;
+    border: 10pt;
+    border-color: rgb(203, 241, 65);
+}
+
+.bodybox{
+    background-color: rgb(176, 248, 236);
+    font-size: 18px;
+}
+
+h1{
+    font-family: 'Rubik Moonrocks', cursive;
+}
+
+h2{
+    font-family: 'Rubik Moonrocks', cursive;
+}
+
+h3{
+    font-family: 'Rubik Moonrocks', cursive;
+}
+
+h4{
+    font-family: 'Rubik Moonrocks', cursive;
+}
+h5{
+    font-family: 'Rubik Moonrocks', cursive;
+}
+h6{
+    font-family: 'Rubik Moonrocks', cursive;
+}
+
+.btn-class{
+    background-color: rgb(36, 13, 2);
+    box-shadow: inset;
+}
+
+.btn-classhover{
+    background-color: rgb(222, 6, 13);
+    box-shadow:inset;
+}
+#htmlbox {
+    background:rgb(165, 238, 96);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
